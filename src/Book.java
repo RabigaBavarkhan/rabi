@@ -1,4 +1,4 @@
-public class Book {
+public abstract class Book {
     private String title;
     private String author;
     private int year;
@@ -9,31 +9,20 @@ public class Book {
         this.year = year;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public String getAuthor() { return author; }
+    public void setAuthor(String author) { this.author = author; }
 
-    public String getAuthor() {
-        return author;
-    }
+    public int getYear() { return year; }
+    public void setYear(int year) { this.year = year; }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
+    public abstract String getType();
 
     public void printInfo() {
-        System.out.println("Book: " + title + ", Author: " + author + ", Year: " + year);
+        System.out.println(getType() + ": " + title +
+                ", Author: " + author +
+                ", Year: " + year);
     }
 }
